@@ -5,6 +5,9 @@ package comd.endava.training.examples;
  */
 public class Main {
     public static void main(String[] args) {
+
+        Simple s = new ExtendSimple();
+
         /* even though the compiler expected an A, at runtime it's a B */
         A a = new B();
         a.f(); /* Hello from B */

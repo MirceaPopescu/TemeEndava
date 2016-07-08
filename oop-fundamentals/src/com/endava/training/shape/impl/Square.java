@@ -7,9 +7,9 @@ import com.endava.training.shape.Shape2D;
  */
 public class Square implements Shape2D {
     /* Center coordinates */
-    float x_coord;
-    float y_coord;
-    float sideLength;
+    private float x_coord;
+    private float y_coord;
+    private float sideLength;
 
     public Square(float x_coord, float y_coord, float sideLength) {
         this.x_coord = x_coord;

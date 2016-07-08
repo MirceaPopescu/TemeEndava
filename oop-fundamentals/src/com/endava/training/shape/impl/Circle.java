@@ -7,9 +7,9 @@ import com.endava.training.shape.Shape2D;
  */
 public class Circle implements Shape2D {
 
-    float x_coord;
-    float y_coord;
-    float radius;
+    private float x_coord;
+    private float y_coord;
+    private float radius;
 
     public Circle(float x_coord, float y_coord, float radius) {
         this.x_coord = x_coord;

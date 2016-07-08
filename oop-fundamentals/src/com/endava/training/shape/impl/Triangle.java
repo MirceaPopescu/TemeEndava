@@ -7,10 +7,10 @@ import com.endava.training.shape.Shape2D;
  */
 public class Triangle implements Shape2D {
 
-    float aX_coord, aY_coord;
-    float bX_coord, bY_coord;
-    float cX_coord, cY_coord;
-    float aSide, bSide, cSide;
+    private float aX_coord, aY_coord;
+    private float bX_coord, bY_coord;
+    private float cX_coord, cY_coord;
+    private float aSide, bSide, cSide;
 
     public Triangle(float aX_coord, float aY_coord, float bX_coord, float bY_coord, float cX_coord, float cY_coord) {
         this.aX_coord = aX_coord;
