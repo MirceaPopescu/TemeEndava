@@ -4,14 +4,14 @@ package ex2;
 import java.util.ArrayList;
 import java.util.Observer;
 
-public class MyArrayList <E> extends ArrayList<E> implements  Observable{
-	/*TODO
-	 * - extend ArrayList and implement Observable
-	 * - override methods
-	 */
+public class MyArrayList<E> extends ArrayList<E> implements Observable {
+    /*TODO
+     * - extend ArrayList and implement Observable
+     * - override methods
+     */
     ArrayList<ListObserver> observers;
 
-    public MyArrayList(){
+    public MyArrayList() {
         super();
         observers = new ArrayList<ListObserver>();
     }
@@ -36,7 +36,7 @@ public class MyArrayList <E> extends ArrayList<E> implements  Observable{
                 return 0;
             }
         };
-        for(ListObserver obs : observers ){
+        for (ListObserver obs : observers) {
             obs.notifyEvent(ev);
         }
         return super.add(e);
@@ -63,7 +63,7 @@ public class MyArrayList <E> extends ArrayList<E> implements  Observable{
             }
         };
 
-        for( ListObserver obs : observers ){
+        for (ListObserver obs : observers) {
             obs.notifyEvent(ev);
         }
 
@@ -90,7 +90,7 @@ public class MyArrayList <E> extends ArrayList<E> implements  Observable{
             }
         };
 
-        for( ListObserver obs : observers ){
+        for (ListObserver obs : observers) {
             obs.notifyEvent(ev);
         }
 

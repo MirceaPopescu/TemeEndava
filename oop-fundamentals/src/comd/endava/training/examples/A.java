@@ -14,5 +14,6 @@ public class A {
 
     void f(int param1, int param2){
         System.out.println("Hello from A - two args");
+
     }
 }

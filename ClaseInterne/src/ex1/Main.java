@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Main {
     public static void main(String[] args) {
-        List<Student>listaStudenti = new ArrayList<Student>();
+        List<Student> listaStudenti = new ArrayList<Student>();
 
         listaStudenti.add(new Student("Alex", 7));
         listaStudenti.add(new Student("Razvan", 8));
@@ -20,13 +20,13 @@ public class Main {
         Person pers = new Person();
 
         /* Sortare cu clasa interna simpla */
-        Collections.sort(listaStudenti, stud.new Alfabetic() );
+        Collections.sort(listaStudenti, stud.new Alfabetic());
         System.out.println(listaStudenti);
         /* Sortare cu clasa interna statica */
         Collections.sort(listaStudenti, new Student.Nota());
         System.out.println(listaStudenti);
         /* Sortare cu clase anonime */
-        Collections.sort(listaStudenti, new Comparator<Student>(){
+        Collections.sort(listaStudenti, new Comparator<Student>() {
 
             @Override
             public int compare(Student o1, Student o2) {

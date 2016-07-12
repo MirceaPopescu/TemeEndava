@@ -5,10 +5,11 @@ import java.util.Comparator;
 /**
  * Created by mipopescu on 7/11/2016.
  */
-public class Student extends Person{
+public class Student extends Person {
 
     private Integer grade;
-    static class Nota implements Comparator<Student>{
+
+    static class Nota implements Comparator<Student> {
 
         @Override
         public int compare(Student o1, Student o2) {
@@ -17,13 +18,14 @@ public class Student extends Person{
     }
 
 
-    public Student(){}
+    public Student() {
+    }
 
-    public Student(String name){
+    public Student(String name) {
         super(name);
     }
 
-    public Student(String name, Integer grade){
+    public Student(String name, Integer grade) {
         super(name);
         this.grade = grade;
     }
@@ -36,7 +38,7 @@ public class Student extends Person{
         this.grade = grade;
     }
 
-    public String toString(){
+    public String toString() {
         return this.name + " " + this.grade;
     }
 }

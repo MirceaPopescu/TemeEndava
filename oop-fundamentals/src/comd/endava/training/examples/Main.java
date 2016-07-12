@@ -22,5 +22,7 @@ public class Main {
 
         A d = new C();
         d.f(); /* will print "Hello from C" */
+
+
     }
 }

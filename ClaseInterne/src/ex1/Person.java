@@ -7,22 +7,24 @@ import java.util.Comparator;
  */
 public class Person {
 
-    class Alfabetic implements Comparator<Person>{
+    class Alfabetic implements Comparator<Person> {
 
         @Override
         public int compare(Person o1, Person o2) {
             return o1.getName().compareTo(o2.getName());
         }
-    };
+    }
+
+    ;
 
     // protected not private, because subclasses may need it (any person has a name)
     protected String name;
 
-    public Person(){
+    public Person() {
         name = "";
     }
 
-    public Person(String name){
+    public Person(String name) {
         this.name = name;
     }
 

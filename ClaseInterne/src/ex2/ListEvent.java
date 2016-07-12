@@ -3,9 +3,9 @@ package ex2;
 /**
  * Created by mipopescu on 7/11/2016.
  */
+
 /**
  * Abstract class for list related events.
- *
  */
 
 public abstract class ListEvent {
@@ -13,7 +13,7 @@ public abstract class ListEvent {
     private EventType type;
 
 
-    public ListEvent(EventType type){
+    public ListEvent(EventType type) {
         this.type = type;
     }
 
@@ -44,6 +44,7 @@ public abstract class ListEvent {
     public EventType getType() {
         return type;
     }
+
     public void setType(EventType type) {
         this.type = type;
     }

@@ -4,7 +4,7 @@ package ex2;
  * Created by mipopescu on 7/11/2016.
  */
 public class Test {
-    class Observer1 implements ListObserver{
+    class Observer1 implements ListObserver {
 
         @Override
         public void notifyEvent(ListEvent e) {
