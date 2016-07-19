@@ -51,6 +51,16 @@ public class Treasure {
     public void setLore(String lore) {
         this.lore = lore;
     }
+
+    public boolean equals(Object o){
+        if( o instanceof Treasure){
+            Treasure t = (Treasure) o;
+            return t.getPosy() == posy && t.getPosx() == posx;
+        }
+
+        return false;
+    }
+
 }
 
 /**

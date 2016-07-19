@@ -1,5 +1,7 @@
 package game;
 
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 import java.util.Observable;
 
@@ -19,26 +21,28 @@ class MapPrinter implements java.util.Observer {
     private void updateGameState(Observable o) {
         GameState gs = (GameState) o;
         ArrayList<Hero> heroes = gs.getHeroes();
-        int map[][] = gs.getMap().clone();
+        int map[][] = gs.getMap();
+        ArrayList<Pair<Integer,Integer>> heroPositions = new ArrayList<Pair<Integer, Integer>>();
 
-        for(Hero h : heroes){
+        for (Hero h : heroes) {
             int posx = h.getPosx();
             int posy = h.getPosy();
 
-            map[posy][posx] = -1;
+            heroPositions.add(new Pair<Integer, Integer>(posx, posy));
         }
 
-        for(int i = 0; i < gs.MAP_SIZE; i++){
+        for (int i = 0; i < gs.MAP_SIZE; i++) {
             String toPrint = new String();
 
-            for(int j = 0; j < gs.MAP_SIZE; j++){
-                if( map[i][j] == 2){
-                    toPrint += "T ";
+            for (int j = 0; j < gs.MAP_SIZE; j++) {
+
+                if (heroPositions.contains(new Pair(i, j))) {
+                    toPrint += "H ";
                     continue;
                 }
 
-                if( map[i][j] == -1){
-                    toPrint += "H ";
+                if (map[i][j] == 2) {
+                    toPrint += "T ";
                     continue;
                 }
 

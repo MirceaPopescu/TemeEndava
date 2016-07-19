@@ -48,6 +48,8 @@ public class GameState extends java.util.Observable {
 
                 if (map[i][j] == 0) {
                     map[i][j] = 2;
+                    newTreasure.posx = i;
+                    newTreasure.posy = j;
                     break;
                 }
             }
