@@ -15,53 +15,14 @@ public class ex2 {
         Writer fileWriter;
         BufferedWriter bufferedWriter = null;
 
-
-        /* Open the file once and then close it, just so it gets cleared */
-        try {
-            fileWriter = new FileWriter(outputFileName, false);
-            bufferedWriter = new BufferedWriter(fileWriter);
-        } catch(IOException ex){
-            System.out.println("I/O Exception:" + ex.getMessage());
-        }  finally {
-            try {
-                if (bufferedWriter != null) {
-                    bufferedWriter.close();
-                }
-            } catch (IOException ex) {
-                System.out.println("I/O Exception:" + ex.getMessage());
-            }
-        }
-
+        flushFile();
 
         int lineCount = countLines(inputFileName);
         for(int i = lineCount - 1; i >= 0; i--){
             String line = getLine(inputFileName, i);
             String []tokens = line.split(" ");
 
-            try {
-                fileWriter = new FileWriter(outputFileName, true);
-                bufferedWriter = new BufferedWriter(fileWriter);
-
-                for(int j = tokens.length-1; j> 0; j--){
-                    bufferedWriter.write(tokens[j] + " ");
-                }
-                bufferedWriter.write(tokens[0]);
-
-                bufferedWriter.newLine();
-                bufferedWriter.flush();
-            } catch (FileNotFoundException ex) {
-                System.out.println("File missing '" + outputFileName + "'");
-            } catch (IOException ex) {
-                System.out.println("I/O Exception:" + ex.getMessage());
-            } finally {
-                try {
-                    if (bufferedWriter != null) {
-                        bufferedWriter.close();
-                    }
-                } catch (IOException ex) {
-                    System.out.println("I/O Exception:" + ex.getMessage());
-                }
-            }
+            printToFile(tokens);
         }
 
     }
@@ -125,5 +86,57 @@ public class ex2 {
         }
 
         return null;
+    }
+
+    static void flushFile(){
+        Writer fileWriter;
+        BufferedWriter bufferedWriter = null;
+
+
+        /* Open the file once and then close it, just so it gets cleared */
+        try {
+            fileWriter = new FileWriter(outputFileName, false);
+            bufferedWriter = new BufferedWriter(fileWriter);
+        } catch(IOException ex){
+            System.out.println("I/O Exception:" + ex.getMessage());
+        }  finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+            } catch (IOException ex) {
+                System.out.println("I/O Exception:" + ex.getMessage());
+            }
+        }
+    }
+
+    static void printToFile(String[] tokens){
+        Writer fileWriter;
+        BufferedWriter bufferedWriter = null;
+
+        try {
+            fileWriter = new FileWriter(outputFileName, true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+
+            for(int j = tokens.length-1; j> 0; j--){
+                bufferedWriter.write(tokens[j] + " ");
+            }
+            bufferedWriter.write(tokens[0]);
+
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        } catch (FileNotFoundException ex) {
+            System.out.println("File missing '" + outputFileName + "'");
+        } catch (IOException ex) {
+            System.out.println("I/O Exception:" + ex.getMessage());
+        } finally {
+            try {
+                if (bufferedWriter != null) {
+                    bufferedWriter.close();
+                }
+            } catch (IOException ex) {
+                System.out.println("I/O Exception:" + ex.getMessage());
+            }
+        }
     }
 }
