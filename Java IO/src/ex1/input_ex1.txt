@@ -1,0 +1,4 @@
+x This is a dummy file. If you count x it will appear twice.
+
+If the offset is greater than 0, it will appear once.
+If it's greater than 37, it will appear 0 times.
