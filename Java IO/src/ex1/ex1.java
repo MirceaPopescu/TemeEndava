@@ -11,7 +11,7 @@ public class ex1 {
 
     public static void main(String[] args) throws IOException {
 
-        /* Printed the working directory. haha */
+        /* Printed the working directory. */
 //        System.out.println("Working Directory = " +
 //                System.getProperty("user.dir"));
 
