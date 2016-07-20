@@ -1,7 +1,5 @@
 package ex1.part2;
 
-import ex1.PrimeNumbersThread;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,9 +9,10 @@ import java.util.Random;
 public class Main {
     public static final int PROBLEM_SIZE = 100000;
     public static final int N_THREADS = 4;
+    public static final long RANDOM_SEED = 7;
 
     public static void main(String[] args) {
-        Random random = new Random(100);
+        Random random = new Random(RANDOM_SEED);
         int[] input = new int[PROBLEM_SIZE];
         ArrayList<Integer> output = new ArrayList<>();
 
